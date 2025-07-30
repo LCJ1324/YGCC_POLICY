@@ -161,7 +161,7 @@ def short_term_page():
 
 
 def mypage():
-    st.set_page_config(page_title="마이페이지", layout="centered")
+    st.set_page_config(page_title="마이페이지", layout="wide")
     st.title("마이페이지")
     st.subheader("나의 신청내역")
     import pandas as pd
