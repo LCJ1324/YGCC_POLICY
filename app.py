@@ -6,19 +6,20 @@ def login_page():
     st.set_page_config(page_title="로그인", layout="centered")
     st.title("청년 주거지원 통합 서비스")
 
-    username = st.text_input("아이디")
-    password = st.text_input("비밀번호", type="password")
+    username = st.text_input("아이디", "test")
+    password = st.text_input("비밀번호", 1234, type="password")
     _, col1, col2 = st.columns([0.76, 0.12, 0.14])
     if col1.button("로그인", use_container_width=True):
         if username == "test" and password == "1234":
             st.session_state.login = True
             st.session_state.page = "main"
-            st.success("이계몽님 환영합니다.")
+            st.success("대한민국의 모든 청년분들을 응원합니다.")
             time.sleep(1)
             st.rerun()
         else:
             st.error("아이디 또는 비밀번호가 잘못되었습니다.")
-    col2.button("회원가입", use_container_width=True)
+    if col2.button("회원가입", use_container_width=True):
+        st.warning("현재 지원하지 않는 기능입니다.")
 
 
 def main_page():
@@ -173,7 +174,7 @@ def mypage():
             "알림": ["서류 보완 요청", "배정 확정"],
         }
     )
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
     st.divider()
     st.warning("⚠️ 주거비 지원 제출 서류 미비")
     if st.button("뒤로"):
