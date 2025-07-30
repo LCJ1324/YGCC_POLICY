@@ -49,7 +49,7 @@ def main_page():
 def housing_page():
     st.set_page_config(page_title="주거비 지원 신청", layout="wide")
     st.title("주거비 지원 신청")
-    st.subheader("월세의 2/3 지원 (최대 50만원) - 최대 3회 수혜")
+    st.subheader("월세의 2/3 지원 (최대 50만원)")
     tab1, tab2, tab3 = st.tabs(["지원 대상", "지원 조건", "지원 방식"])
     with tab1:
         st.write("**지원 대상**")
@@ -60,6 +60,7 @@ def housing_page():
         st.write("**지원 조건**")
         st.write("1개월 이상 근무한 청년")
         st.write("동일 기업 또는 동일 기간 내 중복 지원 불가")
+        st.text("최대 3회 수혜")
 
     with tab3:
         st.write("**지원 방식**")
